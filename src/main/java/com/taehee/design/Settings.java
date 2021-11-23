@@ -1,6 +1,8 @@
 package com.taehee.design;
 
-public class Settings {
+import java.io.Serializable;
+
+public class Settings implements Serializable {
 
   private Settings() {}
 
