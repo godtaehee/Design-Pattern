@@ -10,21 +10,20 @@ import java.lang.reflect.InvocationTargetException;
 @SpringBootApplication
 public class DesignPatternApplication {
 
-  public static void main(String[] args) throws IOException, ClassNotFoundException {
+  public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 
-    Settings settings = Settings.getInstance();
+    Settings settings = Settings.INSTANCE;
+
     Settings settings1 = null;
 
-    try (ObjectOutput out = new ObjectOutputStream(new FileOutputStream("settings.obj"))) {
-      out.writeObject(settings);
-    }
+    Constructor<?>[] declaredConstructors = Settings.class.getDeclaredConstructors();
+    for (Constructor<?> constructor : declaredConstructors) {
+      constructor.setAccessible(true);
+      settings1 = (Settings) constructor.newInstance("INSTANCE");
 
-    try (ObjectInput in = new ObjectInputStream(new FileInputStream("settings.obj"))) {
-      settings1 = (Settings) in.readObject();
     }
 
     System.out.println(settings == settings1);
-
   }
 }
 
