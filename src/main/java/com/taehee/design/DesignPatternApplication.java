@@ -10,20 +10,9 @@ import java.lang.reflect.InvocationTargetException;
 @SpringBootApplication
 public class DesignPatternApplication {
 
-  public static void main(String[] args) throws IOException, ClassNotFoundException {
-
-    Settings settings = Settings.INSTANCE;
-    Settings settings1 = null;
-
-    try (ObjectOutput out = new ObjectOutputStream(new FileOutputStream("settings.obj"))) {
-      out.writeObject(settings);
-    }
-
-    try (ObjectInput in = new ObjectInputStream(new FileInputStream("settings.obj"))) {
-      settings1 = (Settings) in.readObject();
-    }
-
-    System.out.println(settings == settings1);
+  public static void main(String[] args) {
+    Runtime runtime = Runtime.getRuntime();
+    System.out.println(runtime.maxMemory());
+    System.out.println(runtime.freeMemory());
   }
 }
-
