@@ -13,7 +13,8 @@ public class Settings implements Serializable {
   public static Settings getInstance() {
     return SettingsHolder.INSTANCE;
   }
-}
 
-// Lazy 하게 만들것이고, volatile이라는 키워드도 필요없게 해야한다.
-//
+  protected Object readResolve() {
+    return getInstance();
+  }
+}

@@ -28,4 +28,3 @@ public class DesignPatternApplication {
   }
 }
 
-// 자바는 오브젝트를 파일 형태로 디스크에 저장(직렬화)해놨다가 다시 읽을수가있다(역직렬화)
