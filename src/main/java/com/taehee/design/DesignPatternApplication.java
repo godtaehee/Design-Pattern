@@ -7,8 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DesignPatternApplication {
 
   public static void main(String[] args) {
-    Settings settings1 = new Settings();
-    Settings settings2 = new Settings();
+
+    Settings settings1 = Settings.getInstance();
+    Settings settings2 = Settings.getInstance();
 
     System.out.println(settings1 != settings2);
 
