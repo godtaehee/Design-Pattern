@@ -2,18 +2,16 @@ package com.taehee.design;
 
 public class Settings {
 
-  private static Settings instance;
-
   private Settings() {}
 
+  private static class SettingsHolder {
+    private static final Settings INSTANCE = new Settings();
+  }
+
   public static Settings getInstance() {
-    if (instance == null) {
-      synchronized (Settings.class) {
-        if (instance == null) {
-          instance = new Settings();
-        }
-      }
-    }
-    return instance;
+    return SettingsHolder.INSTANCE;
   }
 }
+
+// Lazy 하게 만들것이고, volatile이라는 키워드도 필요없게 해야한다.
+//
