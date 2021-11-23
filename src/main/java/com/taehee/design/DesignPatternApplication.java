@@ -11,9 +11,9 @@ public class DesignPatternApplication {
     Settings settings1 = Settings.getInstance();
     Settings settings2 = Settings.getInstance();
 
-    System.out.println(settings1 != settings2);
-
+    System.out.println(settings1 == settings2);
+    System.out.println(settings1 == Settings.getInstance());
+    System.out.println(settings2 == Settings.getInstance());
 
   }
-
 }
