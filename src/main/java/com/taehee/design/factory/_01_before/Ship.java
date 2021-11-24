@@ -1,4 +1,4 @@
-package com.taehee.design.factory;
+package com.taehee.design.factory._01_before;
 
 public class Ship {
   private String name;
