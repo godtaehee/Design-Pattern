@@ -1,4 +1,4 @@
-package com.taehee.design;
+package com.taehee.design.singleton;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

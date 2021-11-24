@@ -1,4 +1,4 @@
-package com.taehee.design;
+package com.taehee.design.singleton;
 
 public enum Settings {
 
